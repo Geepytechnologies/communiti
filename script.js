@@ -1,5 +1,6 @@
 const socket = io('http://localhost:8000');
 
+
 const body = document.querySelector('.container');
 const chatBox = document.getElementById('chatContainer');
 const onUsers = document.getElementById('onUsers');
@@ -63,7 +64,8 @@ socket.on('user-joined', data => {
 })
 
 socket.on('receive',data =>{
-    appendMessage(data.message,data.name,'left',data.id)
+    const decrypted = key.decrypt(data.message, 'utf8');
+    appendMessage(decrypted,data.name,'left',data.id)
 })
 
 const likedMessage = (id)=>{
@@ -95,5 +97,3 @@ form.addEventListener('submit', (e) => {
     socket.emit('send', { message, id })
     messageInput.value = "";
 })
-
-

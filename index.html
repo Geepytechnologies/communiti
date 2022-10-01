@@ -4,19 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat App</title>
+    <title>E2E Encryption</title>
     <link rel="stylesheet" href="./style.css">
     <script defer src="https://kit.fontawesome.com/42eae9eadc.js" crossorigin="anonymous"></script>
     <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>
-    <script defer src="./client.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/node-rsa@1.1.1/src/NodeRSA.min.js"></script>
+    <script defer src="./script.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="chatContainer" id="chatContainer">
+            <img src="./bg.jpg" alt="chatimage" class="myimage">
             <div class="chatHead">
-                <p>Programmer's Group</p>
+                <div class="titlecon">
+                    <p class="title">Chat room</p>
+                    <p class="titlesub">Communiti Dev</p>
+                </div>
                 <div class="usersCount">
-                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-user icon"></i>
                     <span id="onUsers">0</span>
                 </div>
             </div>
